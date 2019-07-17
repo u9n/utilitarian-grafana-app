@@ -1,0 +1,39 @@
+{
+  "type": "app",
+  "name": "Utilitarian",
+  "id": "utilitarian-grafana-app",
+
+  "info": {
+    "description": "Grafana application for Utilitarian.",
+    "author": {
+      "name": "Utilitarian",
+      "url": "https://www.utilitarian.io"
+    },
+    "keywords": ["utilitarian"],
+    "logos": {
+      "small": "img/utilitarian_small.svg",
+      "large": "img/utilitarian_large.svg"
+    },
+    "links": [
+      {"name": "Utilitarian", "url": "https://www.utilitarian.io"},
+      {"name": "Utilitarian Docs", "url": "https://docs.utilitarian.io"},
+      {"name": "Utilitarian Grafana App Project", "url": "https://github.com/u9n/utilitarian-grafana-app"},
+      {"name": "License & Terms", "url": "https://github.com/u9n/utilitarian-grafana-app/blob/master/LICENSE"}
+    ],
+    "version": "0.0.1",
+    "updated": "2019-07-14"
+  },
+
+  "includes": [
+    {"type": "dashboard", "name": "Utilitarian Overview", "path": "dashboards/utilitarian_overview.json", "addToNav": true, "defaultNav": true},
+    {"type": "dashboard", "name": "Meter Device Overview", "path": "dashboards/utilitarian_overview.json", "addToNav": true},
+
+    {"type": "page", "name": "Test Page", "component": "TestPageCtrl", "role": "Viewer", "addToNav": true}
+
+  ],
+
+  "dependencies": {
+    "grafanaVersion": "6.x.x",
+    "plugins": []
+  }
+}
