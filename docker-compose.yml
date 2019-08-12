@@ -8,6 +8,7 @@ services:
     - "3000:3000"
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=secret
+      - GF_LOG_LEVEL=debug
 
     volumes:
       - ./:/var/lib/grafana/plugins/utilitarian-grafana-app

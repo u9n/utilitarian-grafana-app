@@ -15,11 +15,12 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
-  "iteration": 1563536954569,
+  "id": null,
+  "iteration": 1563785741729,
   "links": [],
   "panels": [
     {
+      "datasource": "$datasource",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -151,6 +152,7 @@
       }
     },
     {
+      "datasource": "$datasource",
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
@@ -277,6 +279,7 @@
       "valueName": "current"
     },
     {
+      "datasource": "$datasource",
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
@@ -403,6 +406,7 @@
       "valueName": "last_time"
     },
     {
+      "datasource": "$datasource",
       "content": "\n$SeriesDescription\n\n\n\n",
       "gridPos": {
         "h": 3,
@@ -448,6 +452,7 @@
       "type": "text"
     },
     {
+      "datasource": "$datasource",
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -598,12 +603,26 @@
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
-          "text": "7ELS9604512481",
-          "value": "7ELS9604512481"
+          "selected": true,
+          "text": "utilitarian",
+          "value": "utilitarian"
         },
-        "datasource": "PostgreSQL",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Utilitarian DB",
+        "multi": false,
+        "name": "datasource",
+        "options": [],
+        "query": "postgres",
+        "refresh": 1,
+        "regex": "/.*utilitarian.*/i",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
+        "allValue": null,
+        "datasource": "$datasource",
         "definition": "select name from metering_meterdevice",
         "hide": 0,
         "includeAll": false,
@@ -624,11 +643,7 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "9a407915-c77b-4bd2-bb2d-110149d59b14",
-          "value": "9a407915-c77b-4bd2-bb2d-110149d59b14"
-        },
-        "datasource": "PostgreSQL",
+        "datasource": "$datasource",
         "definition": "select id from metering_meterdevice where name = '$MeterDevice';",
         "hide": 2,
         "includeAll": false,
@@ -649,11 +664,7 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "4:0302",
-          "value": "4:0302"
-        },
-        "datasource": "PostgreSQL",
+        "datasource": "$datasource",
         "definition": "select name from metering_meterreadingseries where id in (select meterreadingseries_id from metering_meterdeviceconfig_series where meterdeviceconfig_id = (select config_id from metering_meterdevicetype where id = (select type_id from metering_meterdevice where id = '$MeterDeviceID')));",
         "hide": 0,
         "includeAll": false,
@@ -674,11 +685,7 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "ad7df632-5699-41b3-93b0-9ef97a835391",
-          "value": "ad7df632-5699-41b3-93b0-9ef97a835391"
-        },
-        "datasource": "PostgreSQL",
+        "datasource": "$datasource",
         "definition": "select id from metering_meterreadingseries where name = '$Series' and id in (select meterreadingseries_id from metering_meterdeviceconfig_series where meterdeviceconfig_id = (select config_id from metering_meterdevicetype where id = (select type_id from metering_meterdevice where id = '$MeterDeviceID')));",
         "hide": 2,
         "includeAll": false,
@@ -699,11 +706,7 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "Volume at measurement conditions, total quantity",
-          "value": "Volume at measurement conditions, total quantity"
-        },
-        "datasource": "PostgreSQL",
+        "datasource": "$datasource",
         "definition": "select description from metering_meterreadingseries where id = '$SeriesID'",
         "hide": 2,
         "includeAll": false,
@@ -756,5 +759,5 @@
   "timezone": "",
   "title": "Meter Device Overview",
   "uid": "vM34FiNZk",
-  "version": 6
+  "version": 1
 }
